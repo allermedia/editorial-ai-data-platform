@@ -23,6 +23,9 @@
 - name: matching-service
   image: matching-service
   service_account: aller-ai-sa@aller-content-tool.iam.gserviceaccount.com
+  resources:
+    cpu: 1
+    memory: 4Gi
 #- name: traffix-exporter
 #  image: traffix-exporter
 #  service_account: aller-ai-sa@aller-content-tool.iam.gserviceaccount.com
