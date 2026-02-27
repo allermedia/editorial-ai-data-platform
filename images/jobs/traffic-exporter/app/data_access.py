@@ -7,10 +7,20 @@ class DataAccess:
     def __init__(self, project_id: str):
         self.project_id = project_id
         self.dataset = "editorial"
-        self.client = bigquery.Client(project=project_id)
+        
+
+        quota_project = "aller-data-platform-prod-1f89"
+        
+        print(self.project_id)
+        print(quota_project)
+        self.client = bigquery.Client(project=quota_project)
+        print("BigQuery client created successfully.")
+        print("--- ADC DEBUGGING END ---")
             
     def get_pageviews(self, event_date):  
         table = "agg_web_traffic_by_page"
+
+        print(f"Fetching pageviews for event_date: {event_date} from table: {table}")
 
         source_query = f"""
             SELECT
