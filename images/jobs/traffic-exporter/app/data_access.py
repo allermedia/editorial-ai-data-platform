@@ -8,9 +8,11 @@ class DataAccess:
         self.project_id = project_id
         self.dataset = "editorial"
         self.client = bigquery.Client(project=project_id)
-            
+    
     def get_pageviews(self, event_date):  
         table = "agg_web_traffic_by_page"
+
+        print(f"Fetching pageviews for event_date: {event_date} from table: {table}")
 
         source_query = f"""
             SELECT
@@ -30,8 +32,6 @@ class DataAccess:
         job = self.client.query(source_query)
         
         rows = list(job.result())
-
-        #transformed_data = [self.transform_row(dict(row)) for row in rows]
 
         return rows
 
