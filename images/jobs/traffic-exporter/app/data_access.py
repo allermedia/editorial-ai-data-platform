@@ -7,16 +7,8 @@ class DataAccess:
     def __init__(self, project_id: str):
         self.project_id = project_id
         self.dataset = "editorial"
-        
-
-        quota_project = "aller-data-platform-prod-1f89"
-        
-        print(self.project_id)
-        print(quota_project)
-        self.client = bigquery.Client(project=quota_project)
-        print("BigQuery client created successfully.")
-        print("--- ADC DEBUGGING END ---")
-            
+        self.client = bigquery.Client(project=project_id)
+    
     def get_pageviews(self, event_date):  
         table = "agg_web_traffic_by_page"
 
@@ -40,8 +32,6 @@ class DataAccess:
         job = self.client.query(source_query)
         
         rows = list(job.result())
-
-        #transformed_data = [self.transform_row(dict(row)) for row in rows]
 
         return rows
 
