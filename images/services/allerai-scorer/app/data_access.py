@@ -27,7 +27,7 @@ class DataManager:
                 sub_category,
                 text_embeddings_en as embeddings_en,
                 ROW_NUMBER() OVER (PARTITION BY site_domain ORDER BY published_ts DESC) AS rn
-            FROM `{self.adp_project_id}.editorial.pages`
+            FROM `{self.adp_project_id}.editorial.dim_pages`
             WHERE page_type = 'Article'
             AND text_embeddings_en IS NOT NULL
         )
