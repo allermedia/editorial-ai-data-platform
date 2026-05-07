@@ -8,7 +8,7 @@ def get_pages(from_date, to_date):
     print(f"Fetching data from {from_date} to {to_date}")
     source_project_id = "aller-data-platform-prod-1f89"
     source_dataset = "editorial"
-    source_table = "pages"
+    source_table = "dim_pages"
     
     client = bigquery.Client()
     # Get existing page_id from target table to avoid duplicates
