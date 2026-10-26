@@ -1,8 +1,8 @@
-data-enrichment-weekly:
-  description: Triggers the data-enrichment job weekly at 7 AM each monday.
-  job_name: data-enrichment
-  schedule: "0 7 * * 1"
-  time_zone: Europe/Copenhagen
+#data-enrichment-weekly:
+#  description: Triggers the data-enrichment job weekly at 7 AM each monday.
+#  job_name: data-enrichment
+#  schedule: "0 7 * * 1"
+#  time_zone: Europe/Copenhagen
 
 draft-fetcher-weekly:
   description: Triggers the draft-fetcher job weekly at 6 AM each monday.
