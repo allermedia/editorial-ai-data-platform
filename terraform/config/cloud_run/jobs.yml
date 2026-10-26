@@ -1,8 +1,8 @@
-- name: data-enrichment
-  image: data-enrichment
-  service_account: aller-ai-sa@aller-content-tool.iam.gserviceaccount.com
-  env_vars:
-    - OPENAI_API_KEY
+#- name: data-enrichment
+#  image: data-enrichment
+#  service_account: aller-ai-sa@aller-content-tool.iam.gserviceaccount.com
+#  env_vars:
+#    - OPENAI_API_KEY
 
 - name: draft-fetcher
   image: draft-fetcher
